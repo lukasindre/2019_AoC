@@ -23,7 +23,7 @@ def main():
             pos_tracker += 1
 
         print(f"{pos_tracker}, {nums_list[pos_tracker]},  {nums_list[0]}")
-
+    print(nums_list)
 
 
 
