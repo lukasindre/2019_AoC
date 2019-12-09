@@ -7,58 +7,39 @@ def main():
     wire1_str_list = wire1.split(',')
     wire2_str_list = wire2.split(',')
 
-    position1 = {
-        'R': 0,
-        'L': 0,
-        'U': 0,
-        'D': 0,
-    }
-    position2 = {
-        'R': 0,
-        'L': 0,
-        'U': 0,
-        'D': 0,
-    }
+    r1, r2, l1, l2, u1, u2, d1, d2 = 0, 0, 0, 0, 0, 0, 0, 0
+
+    position1 = [l1, r1, u1, d1]
+    position2 = [l2, r2, u2, d2]
     x = 0
     while x in range(len(wire1_str_list) - 1):
 
-        for entry in wire1_str_list:
-            if entry[0] == 'R':
-                position1.update({
-                    'R': position1['R'] + int(entry[1:])
-                })
-            elif entry[0] == 'L':
-                position1.update({
-                    'L': position1['L'] + int(entry[1:])
-                })
-            elif entry[0] == 'U':
-                position1.update({
-                    'U': position1['U'] + int(entry[1:])
-                })
-            elif entry[0] == 'D':
-                position1.update({
-                    'D': position1['D'] + int(entry[1:])
-                })
+        if wire1_str_list[x][0] == 'R':
+            r1 += int(wire1_str_list[x][1:])
+            position1 = [l1, r1, u1, d1]
+        elif wire1_str_list[x][0] == 'L':
+            l1 += int(wire1_str_list[x][1:])
+            position1 = [l1, r1, u1, d1]
+        elif wire1_str_list[x][0] == 'U':
+            u1 += int(wire1_str_list[x][1:])
+            position1 = [l1, r1, u1, d1]
+        elif wire1_str_list[x][0] == 'D':
+            d1 += int(wire1_str_list[x][1:])
+            position1 = [l1, r1, u1, d1]
 
-        for entry in wire2_str_list:
-            if entry[0] == 'R':
-                position2.update({
-                    'R': position2['R'] + int(entry[1:])
-                })
-            elif entry[0] == 'L':
-                position2.update({
-                    'L': position2['L'] + int(entry[1:])
-                })
-            elif entry[0] == 'U':
-                position2.update({
-                    'U': position2['U'] + int(entry[1:])
-                })
-            elif entry[0] == 'D':
-                position2.update({
-                    'D': position2['D'] + int(entry[1:])
-                })
+        if wire2_str_list[x][0] == 'R':
+            r2 += int(wire2_str_list[x][1:])
+            position2 = [l2, r2, u2, d2]
+        elif wire2_str_list[x][0] == 'L':
+            l2 += int(wire2_str_list[x][1:])
+            position2 = [l2, r2, u2, d2]
+        elif wire2_str_list[x][0] == 'U':
+            u2 += int(wire2_str_list[x][1:])
+            position2 = [l2, r2, u2, d2]
+        elif wire2_str_list[x][0] == 'D':
+            d2 += int(wire2_str_list[x][1:])
+            position2 = [l2, r2, u2, d2]
 
-        print(position1, position2)
 
         x += 1
 
