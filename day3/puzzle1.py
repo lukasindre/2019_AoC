@@ -41,8 +41,7 @@ def main():
             position2 = [l2, r2, u2, d2]
 
 
-        x += 1
-
+        
 
 if __name__ == '__main__':
     main()
