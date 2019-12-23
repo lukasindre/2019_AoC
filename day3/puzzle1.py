@@ -41,7 +41,15 @@ def main():
             position2 = [l2, r2, u2, d2]
 
 
-        
+        if abs(r1 - l1) == abs(r2 - l2) and abs(u1 - d1) == abs(u2 - d2):
+            print('match')
+        else:
+            print('no match')
+        x += 1
+
+
+
+
 
 if __name__ == '__main__':
     main()
